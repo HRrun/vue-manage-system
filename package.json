@@ -5,24 +5,48 @@
   "scripts": {
     "dev": "npm run serve",
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "start": "node index.js"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "@jiaminghi/data-view": "^2.10.0",
+    "@types/echarts": "^4.9.7",
+    "axios": "^0.21.1",
     "babel-polyfill": "^6.26.0",
+    "echarts": "^4.9.0",
     "element-ui": "^2.11.0",
     "mavon-editor": "^2.6.17",
+    "node-sass": "^4.14.1",
+    "qrcodejs2": "0.0.2",
     "vue": "^2.6.10",
     "vue-cropperjs": "^3.0.0",
     "vue-i18n": "^8.10.0",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "^3.0.3",
     "vue-schart": "^2.0.0",
-    "vuedraggable": "^2.17.0"
+    "vuedraggable": "^2.17.0",
+    "vue-awesome": "^4.1.0"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.9.0",
     "@vue/cli-service": "^3.9.0",
+    "less": "^4.1.1",
+    "less-loader": "^7.3.0",
+    "sass-loader": "^7.3.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "eslintConfig": {
+    "root": true,
+    "env": {
+      "node": true
+    },
+    "extends": [
+      "plugin:vue/essential",
+      "eslint:recommended"
+    ],
+    "parserOptions": {
+      "parser": "babel-eslint"
+    },
+    "rules": {}
   }
 }
