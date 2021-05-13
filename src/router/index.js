@@ -4,20 +4,168 @@ import Router from 'vue-router';
 Vue.use(Router);
 
 export default new Router({
+    /*base: '/car-park/',
+    mode: 'history',*/
     routes: [
         {
             path: '/',
-            redirect: '/dashboard'
+            component: () => import(/* webpackChunkName: "login" */ '../components/page/Login.vue'),
+            meta: { title: '登录' }
         },
         {
-            path: '/',
+            path: '/login',
+            component: () => import(/* webpackChunkName: "login" */ '../components/page/Login.vue'),
+            meta: { title: '登录' }
+        },
+        {
+            path: '/home',
             component: () => import(/* webpackChunkName: "home" */ '../components/common/Home.vue'),
-            meta: { title: '自述文件' },
             children: [
                 {
                     path: '/dashboard',
-                    component: () => import(/* webpackChunkName: "dashboard" */ '../components/page/Dashboard.vue'),
+                    //component: () => import(/* webpackChunkName: "dashboard" */ '../components/page/Dashboard.vue'),
+                    component: () => import(/* webpackChunkName: "dashboard" */ '../views/page.vue'),
                     meta: { title: '系统首页' }
+                },
+                {
+                    path: '/users',
+                    component: () => import('../view/system/users.vue'),
+                    meta: { title: '用户管理'}
+                },
+                {
+                    path: '/authority',
+                    component: () => import('../view/system/authority.vue'),
+                    meta: { title: '权限管理'}
+                },
+                {
+                    path: '/roles',
+                    component: () => import('../view/system/roles.vue'),
+                    meta: { title: '角色管理'}
+                },
+                {
+                    path: '/menus',
+                    component: () => import('../view/system/menus.vue'),
+                    meta: { title: '菜单管理'}
+                },
+                {
+                    path: '/apis',
+                    component: () => import('../view/system/apis.vue'),
+                    meta: { title: 'API管理'}
+                },
+                {
+                    path: '/park-record',
+                    component: () => import('../view/statistical/parkRecord.vue'),
+                    meta: { title: '停车记录'}
+                },
+                {
+                    path: '/real-time',
+                    component: () => import('../view/statistical/realTime.vue'),
+                    meta: { title: '实时数据统计'}
+                },
+                {
+                    path: '/turnover',
+                    component: () => import('../view/statistical/turnover.vue'),
+                    meta: { title: '营业额统计'}
+                },
+                {
+                    path: '/stop-car',
+                    component: () => import('../view/statistical/stopCar.vue'),
+                    meta: { title: '停车统计'}
+                },
+                {
+                    path: '/vehiclePayment',
+                    component: () => import('../view/finance/vehiclePayment.vue'),
+                    meta: { title: '车辆缴费列表'}
+                },
+                {
+                    path: '/orders',
+                    component: () => import('../view/finance/orders.vue'),
+                    meta: { title: '订单列表'}
+                },
+                {
+                    path: '/financial-statements',
+                    component: () => import('../view/finance/financialStatements.vue'),
+                    meta: { title: '财务报表'}
+                },
+                {
+                    path: '/receive-payment',
+                    component: () => import('../view/finance/receivePayment.vue'),
+                    meta: { title: '收款管理'}
+                },
+                {
+                    path: '/events-list',
+                    component: () => import('../view/activity/eventsList.vue'),
+                    meta: { title: '活动列表'}
+                },
+                {
+                    path: '/coupon',
+                    component: () => import('../view/activity/coupon.vue'),
+                    meta: { title: '优惠券列表'}
+                },
+                {
+                    path: '/pda',
+                    component: () => import('../view/PDA/list.vue'),
+                    meta: { title: 'PDA管理'}
+                },
+                {
+                    path: '/common',
+                    component: () => import('../view/cars/common.vue'),
+                    meta: { title: '普通车辆管理'}
+                },
+                {
+                    path: '/special',
+                    component: () => import('../view/cars/special.vue'),
+                    meta: { title: '特殊车辆管理'}
+                },
+                {
+                    path: '/carType',
+                    component: () => import('../view/cars/carType.vue'),
+                    meta: { title: '车辆类型管理'}
+                },
+                {
+                    path: '/car-park',
+                    component: () => import('../view/comprehensive/carPark.vue'),
+                    meta: { title: '停车场管理'}
+                },
+                {
+                    path: '/gateway',
+                    component: () => import('../view/comprehensive/gateway.vue'),
+                    meta: { title: '出入口管理'}
+                },
+                {
+                    path: '/hardware',
+                    component: () => import('../view/comprehensive/hardware.vue'),
+                    meta: { title: '硬件设施管理'}
+                },
+                {
+                    path: '/paymentInstitution',
+                    component: () => import('../view/comprehensive/paymentInstitution.vue'),
+                    meta: { title: '支付机构管理'}
+                },
+                {
+                    path: '/receivingMerchant',
+                    component: () => import('../view/comprehensive/receivingMerchant.vue'),
+                    meta: { title: '收款商户管理'}
+                },
+                {
+                    path: '/platformAccount',
+                    component: () => import('../view/comprehensive/platformAccount.vue'),
+                    meta: { title: '平台账号管理'}
+                },
+                {
+                    path: '/paymentTest',
+                    component: () => import('../view/comprehensive/paymentTest.vue'),
+                    meta: { title: '支付测试'}
+                },
+                {
+                    path: '/monthCard',
+                    component: () => import('../view/cards/monthCard.vue'),
+                    meta: { title: '月卡管理'}
+                },
+                {
+                    path: '/yearCard',
+                    component: () => import('../view/cards/yearCard.vue'),
+                    meta: { title: '年卡管理'}
                 },
                 {
                     path: '/icon',
@@ -103,11 +251,6 @@ export default new Router({
                     meta: { title: '支持作者' }
                 }
             ]
-        },
-        {
-            path: '/login',
-            component: () => import(/* webpackChunkName: "login" */ '../components/page/Login.vue'),
-            meta: { title: '登录' }
         },
         {
             path: '*',

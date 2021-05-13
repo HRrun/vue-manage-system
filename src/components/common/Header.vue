@@ -38,9 +38,9 @@
                         <i class="el-icon-caret-bottom"></i>
                     </span>
                     <el-dropdown-menu slot="dropdown">
-                        <a href="https://github.com/lin-xin/vue-manage-system" target="_blank">
+                        <!--<a href="https://github.com/lin-xin/vue-manage-system" target="_blank">
                             <el-dropdown-item>项目仓库</el-dropdown-item>
-                        </a>
+                        </a>-->
                         <el-dropdown-item divided command="loginout">退出登录</el-dropdown-item>
                     </el-dropdown-menu>
                 </el-dropdown>
@@ -53,7 +53,7 @@ import bus from '../common/bus';
 export default {
     data() {
         return {
-            collapse: false,
+            collapse: true,
             fullscreen: false,
             name: 'linxin',
             message: 2
@@ -70,6 +70,8 @@ export default {
         handleCommand(command) {
             if (command == 'loginout') {
                 localStorage.removeItem('ms_username');
+                localStorage.removeItem('token');
+                localStorage.removeItem('csrf-token');
                 this.$router.push('/login');
             }
         },

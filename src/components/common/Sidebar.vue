@@ -62,6 +62,158 @@ export default {
                     title: '系统首页'
                 },
                 {
+                    icon: 'el-icon-setting',
+                    index: 'system',
+                    title: '系统管理',
+                    subs: [
+                        {
+                            index: 'users',
+                            title: '用户管理'
+                        },
+                        {
+                            index: 'roles',
+                            title: '角色管理'
+                        },
+                        {
+                            index: 'menus',
+                            title: '菜单管理'
+                        },
+                        {
+                            index: 'apis',
+                            title: 'API管理'
+                        }
+                    ]
+                },
+                {
+                    icon: 'el-icon-s-data',
+                    index: 'statistical',
+                    title: '统计分析',
+                    subs: [
+                        {
+                            icon: '',
+                            index: 'park-record',
+                            title: '停车记录'
+                        },
+                        {
+                            index: 'real-time',
+                            title: '实时数据统计'
+                        }/*,
+                        {
+                            index: 'turnover',
+                            title: '营业额统计'
+                        },
+                        {
+                            index: 'stop-car',
+                            title: '停车统计'
+                        }*/
+                    ]
+                },
+                {
+                    icon: 'el-icon-notebook-2',
+                    index: 'finance',
+                    title: '财务管理',
+                    subs: [
+                        {
+                            index: 'vehiclePayment',
+                            title: '车辆缴费列表'
+                        },
+                        {
+                            index: 'orders',
+                            title: '订单列表'
+                        }/*,
+                        {
+                            index: 'financial-statements',
+                            title: '财务报表'
+                        },
+                        {
+                            index: 'receive-payment',
+                            title: '收款管理'
+                        }*/
+                    ]
+                },
+                {
+                    icon: 'el-icon-bank-card',
+                    index: 'card',
+                    title: '卡管理',
+                    subs: [
+                        {
+                            index: 'monthCard',
+                            title: '卡管理'
+                        }/*,
+                        {
+                            index: 'yearCard',
+                            title: '年卡管理'
+                        }*/
+                    ]
+                },
+                /*{
+                    icon: 'el-icon-menu',
+                    index: 'activitys',
+                    title: '活动优惠管理',
+                    subs: [
+                        {
+                            index: 'events-list',
+                            title: '活动列表'
+                        },
+                        {
+                            index: 'coupon',
+                            title: '优惠券列表'
+                        }
+
+                    ]
+                },
+                {
+                    icon: 'el-icon-files',
+                    index: 'pda',
+                    title: 'PDA管理'
+                },*/
+                {
+                    icon: 'el-icon-lx-calendar',
+                    index: 'cars',
+                    title: '车辆管理',
+                    subs: [
+                        {
+                            index: 'carType',
+                            title: '车辆类型管理'
+                        }
+                        /*{
+                            index: 'common',
+                            title: '普通车辆管理'
+                        },
+                        {
+                            index: 'special',
+                            title: '特殊车辆管理'
+                        }*/
+                    ]
+                },
+                {
+                    icon: 'el-icon-coin',
+                    index: 'comprehensive',
+                    title: '综合管理',
+                    subs: [
+                        {
+                            index: 'car-park',
+                            title: '停车场管理'
+                        },
+                        {
+                            index: 'paymentInstitution',
+                            title: '支付机构管理'
+                        },
+                        {
+                            index: 'platformAccount',
+                            title: '平台账户管理'
+                        },
+                        {
+                            index: 'receivingMerchant',
+                            title: '收款商户管理'
+                        },
+                        {
+                            index: 'paymentTest',
+                            title: '支付测试'
+                        }
+                    ]
+                }/*,
+                {
                     icon: 'el-icon-lx-cascades',
                     index: 'table',
                     title: '基础表格'
@@ -104,12 +256,12 @@ export default {
                     icon: 'el-icon-lx-emoji',
                     index: 'icon',
                     title: '自定义图标'
-                },
-                {
+                }*//*,
+               {
                     icon: 'el-icon-pie-chart',
                     index: 'charts',
                     title: 'schart图表'
-                },
+                }*//*,
                 {
                     icon: 'el-icon-rank',
                     index: '6',
@@ -149,7 +301,7 @@ export default {
                     icon: 'el-icon-lx-redpacket_fill',
                     index: '/donate',
                     title: '支持作者'
-                }
+                }*/
             ]
         };
     },
@@ -181,7 +333,7 @@ export default {
     width: 0;
 }
 .sidebar-el-menu:not(.el-menu--collapse) {
-    width: 250px;
+    width: 200px;
 }
 .sidebar > ul {
     height: 100%;
